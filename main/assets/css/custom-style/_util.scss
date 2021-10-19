@@ -1,4 +1,4 @@
-@use '../base' as *;
+@use "../base" as *;
 
 // --------------------------------
 
@@ -7,12 +7,177 @@
 // --------------------------------
 
 // 👇 your custom utility class
-// .my-util-class { 
+// .my-util-class {
 //   property: value;
 // }
 
+$menu-height: 1.6em;
+$menu-column-width: 22ch;
+$primary-color: white;
+$highlight-color: hsl(0, 100%, 38%);
+$dark-color: gray;
+$borders-menu: 1px;
+$main-padding: 0.6em;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: gray;
+  color: $primary-color;
+  font-family: "GT America Medium", Arial, Helvetica, sans-serif;
+}
+
+p,
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header {
+  padding: $main-padding;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  a {
+    width: 100%;
+    display: inline-block;
+    padding: 0.2em;
+  }
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 100%;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+    }
+
+    > * {
+      width: 100%;
+
+      @include breakpoint(md) {
+        width: $menu-column-width;
+      }
+    }
+
+    .logo {
+      height: max-content;
+      border-top: $borders-menu solid $primary-color;
+      border-bottom: $borders-menu solid $primary-color;
+      margin-bottom: $menu-height;
+      width: 100%;
+
+      @include breakpoint(md) {
+        width: $menu-column-width;
+      }
+    }
+  }
+
+  .contact {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $main-padding;
+
+    @include breakpoint(md) {
+      display: grid;
+    }
+
+    & > div {
+      width: $menu-column-width;
+      border-top: $borders-menu solid $primary-color;
+      padding: 0.2em;
+    }
+  }
+}
+
+.nav-current {
+  color: $highlight-color;
+}
+
+nav {
+  ul {
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 200ms ease-in;
+  }
+
+  li {
+    position: relative;
+    border-bottom: $borders-menu solid white;
+    height: $menu-height;
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+
+    @include breakpoint(md) {
+      margin-left: $main-padding;
+    }
+
+    &:first-of-type {
+      border-top: $borders-menu solid $primary-color;
+    }
+  }
+
+  & > ul {
+    opacity: 1;
+    pointer-events: auto;
+
+    li:hover {
+      > a {
+        color: $highlight-color;
+      }
+      > ul {
+        opacity: 1;
+        pointer-events: auto;
+        // border: 1px solid green;
+        display: grid;
+
+        > li > a {
+          animation: slideIn 300ms ease;
+        }
+
+        @keyframes slideIn {
+          from {
+            transform: translateY(-0.5em);
+          }
+        }
+        @include breakpoint(md) {
+          @keyframes slideIn {
+            from {
+              transform: translateX(-2em);
+            }
+          }
+        }
+      }
+    }
+    & li > ul {
+      position: absolute;
+      left: 0;
+      top: $menu-height;
+      background-color: black;
+      z-index: 1;
+
+      @include breakpoint(md) {
+        left: 100%;
+        top: -$borders-menu;
+      }
+    }
+  }
+}
+
 // 👇 (optional) create responsive variations - edit only [my-util-class, property, value]
-// @each $breakpoint, $value in $breakpoints { 
+// @each $breakpoint, $value in $breakpoints {
 //   @include breakpoint(#{$breakpoint}) {
 //     .my-util-class\@#{$breakpoint} {
 //       property: value;

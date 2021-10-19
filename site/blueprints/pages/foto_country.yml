@@ -1,0 +1,5 @@
+title: Fotos Land
+fields:
+  country:
+    label: Land
+    type: text
