@@ -1,0 +1,18 @@
+title: Photography
+columns:
+  - width: 1/2
+    sections:
+      pages:
+        headline: Seiten
+        type: pages
+        layout: list
+        size: medium
+        status: listed
+
+      drafts:
+        headline: Entwürfe
+        type: pages
+        layout: list
+        size: medium
+        status: drafts
+        template: photo_project

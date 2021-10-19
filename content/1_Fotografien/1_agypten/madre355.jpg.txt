@@ -1,0 +1,17 @@
+Caption: 
+
+----
+
+Panorama: true
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
+
+----
+
+Sort: 6

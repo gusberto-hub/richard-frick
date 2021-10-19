@@ -1,0 +1,11 @@
+title: Photo Project
+columns:
+  - width: 1/1
+    sections:
+      Files:
+        headline: files
+        type: files
+        layout: cards
+        image:
+          ratio: 3/2
+          cover: false

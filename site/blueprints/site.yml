@@ -1,3 +1,45 @@
 title: Site
-preset: pages
-unlisted: true
+tabs:
+  startscreen:
+      label: Übersicht
+    columns:
+      - width: 1/2
+        sections:
+          pages:
+            label: Seiten
+            type: pages
+            layout: list
+            size: medium
+            status: listed
+
+          drafts:
+            label: Entwürfe
+            headline: Drafts
+            type: pages
+            layout: list
+            size: medium
+            status: drafts
+            
+  infobox:
+      label: Kontakt & Allgemeine Infos
+      sections:
+    fields:
+      address:
+        label: Adresse
+        type: textarea
+        size: small
+      mail:
+        label: E-Mail
+        type: email
+      tel:
+        label: Telefon
+        type: tel
+      tel_mobile:
+        label: Mobile
+        type: tel
+      metaDescription:
+        label: Meta Description
+        type: textarea
+        size: small
+        buttons: false
+        help: "This is the text google shows in the resulst. Meta descriptions can be any length, but Google generally truncates snippets to ~155–160 characters. Keep meta descriptions long enough that they're sufficiently descriptive, some sources recommend descriptions between 50–160 characters."

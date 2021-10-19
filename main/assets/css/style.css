@@ -14025,7 +14025,7 @@ html:not(.js) .no-js\:is-hidden {
 
 @font-face {
   font-family: "GT America Medium";
-  src: url("/main/assets/fonts/GT-America-Standard-Medium.woff") format("woff");
+  src: url("../fonts/GT-America-Standard-Medium.woff") format("woff");
   font-style: normal;
   font-display: swap;
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,80 @@
+Info-text:
+
+# Richard Frick (1955)
+
+- Lebenslauf Lehre als Schriftsetzer
+- Gestalter und Lehrlingsausbild-ner in verschiedenen Betrieben
+- Tätigkeit als Reise-leiter und Graﬁker bei SSR-Reisen (Schweizerischer Studenten-Reisedienst)
+- Graﬁker an der ETH Zürich
+- Ausbildung zum Typograﬁschen Gestalter
+- Lehrbeauftragter an der Schule für Gestaltung (heute ZHdK)
+- Seit 1986 Fachlehrer für Typograﬁe an der Be-rufsschule für Gestaltung in Zürich und seit 2007 an der Hochschule Luzern
+- Leiter der Fachklasse «Typo-graﬁsche Gestalter» «Diplomierter Gestalter HF»
+- Lehr-beauftragter in Havanna
+- Ausbildung zum Berufs-schullehrer SIBP. 
+
+# Fachvorträge in der Schweiz, Deutschland, England, Schottland, Kuba
+- Fachautor verschiedener Bücher: Das trikontinentale Solidaritätsplakat
+- Happy, das Ver-sprechen der Werbung (Mitautor)
+- Fachbuchautor im Autorenkollektiv der comedia-Lehrmittelserie «Satz-technik und Typograﬁe» (heute Triest-Verlag)
+- Autor /Gestalter (zusammen mit Samuel Marty) des CH-Schriftenfächers
+- Redaktion und Gestaltung des Buches «Che: Die ersten Jahre»
+- Verschiedene Artikel in Fachmagazinen.
+Grosse Plakatsammlung sozialistischer Plakate, darunter über 1000 Plakate aus Kuba. 
+
+- Auszeichnungen im Wettbewerb «schönste Schweizer Bücher»
+- Auszeichnungen im internationalen  Plakatfestival in Chaumont (F)
+- Auszeichnung Red-Dot-Award und nominiert für den Deutschen-Design-Preis.
+
+- Unterricht Typograﬁsche Gestalter/-innen, Höhere Fach-schule in Zürich
+- Dozent für Typograﬁe an der Hochschule in Luzern.
+
+----
+
+Imprint:
+
+Impressum
+
+©2021 Richard Frick
+
+Webdesign/konzept
+KUBA Creative Services
+(link: https://kuba.studio text: kuba.studio)
+
+code
+(link: https://vonwilhelm.ch text: vonwilhelm.ch)
+
+----
+
+Panorama: 
+
+----
+
+Caption:
+
+columns:
+  main:
+    width: 1/2
+    sections:
+      content:
+        type: fields
+        fields:
+          caption:
+            label: Caption
+            type: textarea
+            size: small
+  sidebar:
+    width: 1/2
+    sections:
+      meta:
+        type: fields
+        fields:
+          panorama:
+            label: Panorama Photo
+            type: toggle
+          alt:
+            label: Alternative Text
+            type: text
+          photographer:
+            label: Photogapher
+            type: text
