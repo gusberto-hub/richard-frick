@@ -12,7 +12,7 @@ var uglify = require("gulp-uglify");
 var cleanCSS = require("gulp-clean-css");
 var purgecss = require("gulp-purgecss");
 var connect = require("gulp-connect-php");
-const projectPath = "richi_frick_web.test"; // 👈 make sure to replace 'projectName' with the name of your project folder
+const projectPath = "frick_web.test"; // 👈 make sure to replace 'projectName' with the name of your project folder
 
 // js file paths
 var utilJsPath = "main/assets/js"; // util.js path - you may need to update this if including the framework as external node module
