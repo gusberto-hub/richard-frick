@@ -8,6 +8,7 @@ columns:
         layout: list
         size: medium
         status: listed
+        num: zero
 
       drafts:
         headline: Entwürfe
