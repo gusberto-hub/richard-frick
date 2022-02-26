@@ -1,6 +1,17 @@
 title: Photo Project
 columns:
-  - width: 1/1
+  - width: 1/2
+    sections:
+      fields:
+        fields:
+          intro_text_heading:
+            type: text
+            label: Titel Einführung
+          intro_text_body:
+            type: textarea
+            label: Inhalt Einführung
+
+  - width: 1/2
     sections:
       Files:
         headline: files

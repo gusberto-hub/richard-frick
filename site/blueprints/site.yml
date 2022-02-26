@@ -1,7 +1,7 @@
 title: Site
 tabs:
-  startscreen:
-      label: Übersicht
+  overview:
+    label: Übersicht
     columns:
       - width: 1/2
         sections:
@@ -9,7 +9,6 @@ tabs:
             label: Seiten
             type: pages
             layout: list
-            size: medium
             status: listed
 
           drafts:
@@ -17,26 +16,42 @@ tabs:
             headline: Drafts
             type: pages
             layout: list
-            size: medium
             status: drafts
-            
+
+      - width: 1/2
+        sections:
+          fields:
+            fields:
+              home_screen:
+                label: Bild Home Screen
+                type: files
+                size: medium
+                layout: cards
+                multiple: false
+                require: true
+
+          files:
+            layout: cards
+
   infobox:
-      label: Kontakt & Allgemeine Infos
-      sections:
+    label: Kontakt & Allgemeine Infos
     fields:
       address:
         label: Adresse
         type: textarea
-        size: small
+
       mail:
         label: E-Mail
         type: email
+
       tel:
         label: Telefon
         type: tel
+
       tel_mobile:
         label: Mobile
         type: tel
+
       metaDescription:
         label: Meta Description
         type: textarea
