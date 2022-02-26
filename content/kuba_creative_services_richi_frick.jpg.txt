@@ -1,0 +1,9 @@
+Caption: 
+
+----
+
+Panorama: false
+
+----
+
+Sort: 1
