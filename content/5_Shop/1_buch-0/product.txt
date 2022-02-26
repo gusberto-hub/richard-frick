@@ -1,0 +1,51 @@
+Title: Buch-0
+
+----
+
+Name: Das Trikontinentale Solidaritätsplakat
+
+----
+
+Available: true
+
+----
+
+Price: 80
+
+----
+
+Identifier: rf_001
+
+----
+
+Shortdescription:
+
+448 Seiten, gebunden, ISBN 3-9522520-2-6
+comedia Verlag 2003
+
+----
+
+Description:
+
+## über das buch
+Die 1966 in Havanna gegründete Organisation der Solidarität mit Afrika, Asien und Lateinamerika (OSPAAAL) hat mit der Zeitschrift "Tricontinental" und mit Plakaten von Kuba aus politische Propaganda in der Dritten Welt verbreitet und den bewaffneten Befreiungsbewegungen eine authentische Stimme verliehen.
+
+## Spezifikationen
+448 Seiten, gebunden, comedia Verlag 2003
+ISBN 3-9522520-2-6
+
+----
+
+Primaryimage: - screenshot-2021-09-20-at-14.29.31.png
+
+----
+
+Secondaryimage: 
+
+----
+
+Customfield: 
+
+----
+
+Sizes: 

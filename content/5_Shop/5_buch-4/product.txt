@@ -1,0 +1,42 @@
+Name: Poster 1
+
+----
+
+Available: true
+
+----
+
+Price: 80
+
+----
+
+Identifier: rf_005
+
+----
+
+Shortdescription:
+
+448 Seiten, gebunden, ISBN 3-9522520-2-6
+comedia Verlag 2003
+
+----
+
+Description: 
+
+----
+
+Customfield: 
+
+----
+
+Primaryimage:
+
+- screenshot-2021-09-20-at-14.29.31.png
+
+----
+
+Secondaryimage: 
+
+----
+
+Sizes: 

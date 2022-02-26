@@ -1,0 +1,16 @@
+title: Site
+sections:
+  pages:
+    headline: Seiten
+    type: pages
+    layout: list
+    status: listed
+    # template: photo_project
+
+  # drafts:
+  #   label: Entwürfe
+  #   headline: Drafts
+  #   type: pages
+  #   layout: list
+  #   size: medium
+  #   status: drafts

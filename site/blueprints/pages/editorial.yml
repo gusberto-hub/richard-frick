@@ -1,0 +1,12 @@
+title: Default Page
+fields:
+  editorial_list:
+    label: Editorial List
+    type: structure
+    fields:
+      title:
+        label: Editorial Name
+        type: text
+      link:
+        label: Link to flipbook
+        type: url
