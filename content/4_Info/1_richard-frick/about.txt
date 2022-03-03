@@ -30,10 +30,10 @@ Imprint:
 
 ## Webdesign/konzept
 KUBA Creative Services
-(link: https://kuba.studio text: kuba.studio)
+(link: https://kuba.studio text: kuba.studio target:_blank)
 
 ## code
-(link: https://vonwilhelm.ch text: vonwilhelm.ch)
+(link: https://vonwilhelm.ch text: vonwilhelm.ch target:_blank)
 
 ----
 
