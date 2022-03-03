@@ -6,84 +6,116 @@ header {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 3rem;
+  height: 3em;
   position: sticky;
   top: 0;
   z-index: 30;
   background-color: var(--color-bg);
   transition: height 400ms ease;
+  overflow: hidden;
 
   @include breakpoint(md) {
     height: 100%;
+    overflow: visible;
   }
 
   & * {
     text-transform: uppercase;
   }
 
-  // &:hover {
-  //   .nav-bg {
-  //     background-color: var(--color-black) !important;
-  //   }
-  // }
   .nav-container {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 1%;
-    position: relative;
-    transition: height 200ms ease;
+    // height: 1%;
+    // position: relative;
+    // transition: height 200ms ease;
 
     @include breakpoint(md) {
+      display: flex;
+      flex-direction: column;
       margin-right: var(--space-sm);
       flex-direction: row;
-      height: 100%;
+      // height: 100%;
     }
 
-    a {
-      width: 100%;
-      display: inline-block;
-      padding: var(--space-xxxxs) 0;
-      background-color: var(--color-bg);
+    li {
+      // display: unset;
+      // position: relative;
+      // top: (-$borders-menu);
+      // box-shadow: 0px ($borders-menu) 0px var(--color-white),
+      //   0px (-$borders-menu) 0px var(--color-white);
+      border-top: $borders-menu solid var(--color-white);
+      border-bottom: $borders-menu solid var(--color-white);
+      margin-bottom: (-$borders-menu);
+      overflow: hidden;
+      transition: max-height 200ms ease;
+      min-height: $menu-height;
+      max-height: $menu-height;
+      cursor: pointer;
 
-      &:hover {
-        color: var(--color-accent);
+      a {
+        width: 100%;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        padding: var(--space-xxxxs) 0;
+
+        &:hover {
+          color: var(--color-accent);
+        }
+
+        @include breakpoint(md) {
+          padding-left: 0 !important;
+        }
       }
-    }
-
-    &.nav-open {
-      height: 100%;
-
-      // .nav-bg {
-      //   background-color: var(--color-black) !important;
-      //   top: 0;
-      // }
-      .menu-lv1 {
-        height: 100%;
-        border-bottom: $borders-menu solid var(--color-primary);
-      }
-    }
-
-    > * {
-      width: 100%;
 
       @include breakpoint(md) {
-        min-width: $menu-column-width;
+        margin-left: var(--space-sm);
+        overflow: visible;
+        height: unset;
+        transition: none;
+        position: static;
+      }
+    }
+
+    // li {
+    //   // padding: ($borders-menu) 0;
+
+    //   @include breakpoint(md) {
+    //     // padding: 0;
+    //   }
+    //   // > a {
+    //   //   // box-shadow: 0px ($borders-menu) 0px var(--color-white);
+    //   //   @include breakpoint(md) {
+    //   //     border-bottom: none;
+    //   //   }
+    //   // }
+    // }
+
+    > * {
+      // width: 100%;
+
+      @include breakpoint(md) {
         width: $menu-column-width;
       }
     }
 
     .nav-header {
       display: flex;
+      justify-content: space-between;
       height: max-content;
-      border-top: $borders-menu solid var(--color-white);
-      border-bottom: $borders-menu solid var(--color-white);
+      box-shadow: 0px $borders-menu 0px var(--color-white),
+        0px (-$borders-menu) 0px var(--color-white);
       margin-bottom: $menu-height;
       width: 100%;
       z-index: 1;
 
       @include breakpoint(md) {
-        width: $menu-column-width;
+        width: calc((#{$menu-column-width} - var(--space-sm)) * 1.5);
+        box-shadow: 0px (-$borders-menu) 0px var(--color-accent),
+          0px ($borders-menu) 0px var(--color-accent);
+        .logo {
+          color: var(--color-accent);
+        }
       }
 
       button {
@@ -115,166 +147,156 @@ header {
     height: 100%;
 
     .nav-container {
-      height: 100%;
+      // height: 100%;
 
-      .menu-lv1 {
-        height: 100%;
-        border-bottom: $borders-menu solid var(--color-primary);
+      .menu {
+        // height: 100%;
+        // box-shadow: 0px (-$borders-menu) 0px var(--color-accent);
       }
     }
   }
 
   nav {
     width: 100%;
-    // height: 100%;
-    overflow: hidden;
     transition: height 500ms ease-in;
     z-index: 1;
-    // display: none;
+    // overflow: hidden;
+    // padding: $borders-menu 0;
 
     @include breakpoint(md) {
       height: 100%;
       overflow: visible;
     }
 
-    li {
-      position: relative;
-      display: unset;
+    .menu {
+      display: grid;
+      // box-shadow: 0px ($borders-menu) 0px var(--color-white);
 
       @include breakpoint(md) {
-        margin-left: var(--space-sm);
-        display: flex;
-        align-items: center;
-
-        &:last-of-type {
-          border-bottom: $borders-menu solid var(--color-white);
-        }
-      }
-    }
-
-    .menu-lv1 {
-      // pointer-events: auto;
-      display: flex;
-      flex-direction: column;
-
-      @include breakpoint(md) {
-        border-bottom: none;
         height: 100%;
-      }
-
-      .menu-item-lv1 {
-        overflow: hidden;
-        transition: height 200ms ease-in;
-        height: $menu-height;
-        border-top: $borders-menu solid var(--color-white);
-
-        @include breakpoint(md) {
-          overflow: visible;
-          height: unset;
-          transition: none;
-        }
-        > a {
-          border-bottom: $borders-menu solid var(--color-white);
-          @include breakpoint(md) {
-            border-bottom: none;
-          }
-        }
-
-        &.open-menu {
-          --accordion-height: $menu-height;
-          height: var(--accordion-height);
-
-          @include breakpoint(md) {
-            height: $menu-height;
-
-            > a {
-              color: var(--color-accent);
-            }
-            > .menu-lv2 {
-              opacity: 1;
-              // pointer-events: auto;
-              display: grid;
-              z-index: 99;
-
-              > .menu-item-lv2 {
-                animation-duration: 0ms;
-
-                @include breakpoint(md) {
-                  animation: submenuSlideIn 200ms ease both;
-                }
-
-                // > a {
-                //   pointer-events: auto;
-                // }
-              }
-
-              @keyframes submenuSlideIn {
-                from {
-                  transform: translateX(-2em);
-                  opacity: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .menu-item-lv1:first-of-type .menu-item-lv2 {
-        @include breakpoint(md) {
-          width: 15ch;
-
-          &:nth-child(5n + 5) {
-            border-bottom: $borders-menu solid var(--color-white);
-          }
-        }
-      }
-
-      .menu-lv2 {
         position: relative;
-        top: 0;
-        left: 4ch;
-        width: calc(100% - 4ch);
+      }
 
+      li:first-of-type li {
+        @include breakpoint(md) {
+          width: $menu-column-width;
+        }
+      }
+
+      ul {
+        position: relative;
         display: grid;
         grid-template-rows: unset;
-        grid-template-columns: repeat(2, 1fr);
         grid-auto-flow: row;
-
         z-index: 1;
-        // opacity: 1;
+        pointer-events: auto;
 
         @include breakpoint(md) {
           position: absolute;
           left: 100%;
-          top: -$borders-menu;
-
-          grid-template-columns: unset;
+          top: 0;
+          pointer-events: none;
           grid-template-rows: repeat(5, auto);
           grid-auto-flow: column;
-
           opacity: 0;
           width: max-content;
         }
 
-        .menu-item-lv2 {
-          width: 100%;
+        li {
+          // padding-left: 4ch;
           @include breakpoint(md) {
+            padding-left: 0;
             width: $menu-column-width;
           }
 
-          > a {
-            border-top: $borders-menu solid var(--color-white);
-            // pointer-events: none;
-          }
-          &:nth-child(1) a,
-          &:nth-child(2) a {
-            border-top: none;
+          // > * {
+          //   width: 100%;
+          // }
+          // &:nth-child(-n + 2) a,
+          // &:nth-child(-n + 2) p {
+          //   border-top: none;
 
-            @include breakpoint(md) {
-              border-top: $borders-menu solid var(--color-white);
+          //   @include breakpoint(md) {
+          //     box-shadow: 0px -1px 0px var(--color-white);
+          //   }
+          // }
+
+          // &:nth-child(14) {
+          //   // border: 2px solid yellow;
+          // }
+        }
+      }
+
+      &.menu-lv1 {
+        // border: 1px solid red;
+      }
+      .menu-lv2 {
+        > li a {
+          padding-left: 4ch;
+        }
+        &.menu-col-2 {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .menu-lv3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include breakpoint(md) {
+          top: (-$borders-menu);
+        }
+        > li a {
+          padding-left: 8ch;
+        }
+        > li:nth-child(even) {
+          a {
+            padding-left: 4ch;
+          }
+        }
+      }
+
+      .open-menu {
+        // --accordion-height: $menu-height;
+        max-height: 20rem;
+        transition-duration: 300ms;
+
+        @include breakpoint(md) {
+          max-height: $borders-menu;
+          height: unset;
+
+          > a {
+            color: var(--color-accent);
+          }
+          > ul {
+            opacity: 1;
+            pointer-events: auto;
+            display: grid;
+            z-index: 99;
+
+            > li {
+              animation-duration: 0ms;
+
+              @include breakpoint(md) {
+                animation: submenuSlideIn 200ms ease both;
+              }
+
+              > a {
+                // pointer-events: auto;
+                cursor: pointer;
+              }
+            }
+
+            @keyframes submenuSlideIn {
+              from {
+                transform: translateX(-2em);
+                opacity: 0;
+              }
             }
           }
         }
+      }
+
+      .menu-inactive {
+        pointer-events: none !important;
       }
 
       // .menu-item-lv1:hover,
@@ -309,29 +331,29 @@ header {
     }
   }
 
-  .contact {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
-    z-index: 0;
+  // .contact {
+  //   display: none;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   gap: var(--space-sm);
+  //   z-index: 0;
 
-    @include breakpoint(md) {
-      display: grid;
-    }
+  //   @include breakpoint(md) {
+  //     display: grid;
+  //   }
 
-    a {
-      display: block;
-    }
+  //   a {
+  //     display: block;
+  //   }
 
-    & > div {
-      width: $menu-column-width;
-      border-top: $borders-menu solid var(--color-white);
-      padding: var(--space-xxxxs) 0;
-    }
-    &-social {
-      border-top: 1px solid var(--color-primary) !important;
-    }
-  }
+  //   & > div {
+  //     width: $menu-column-width;
+  //     border-top: $borders-menu solid var(--color-white);
+  //     padding: var(--space-xxxxs) 0;
+  //   }
+  //   &-social {
+  //     border-top: 1px solid var(--color-primary) !important;
+  //   }
+  // }
 
   .cart-button {
     position: absolute;

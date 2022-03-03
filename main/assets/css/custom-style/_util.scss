@@ -17,7 +17,8 @@
 }
 
 $menu-height: 1.6em;
-$menu-column-width: min(15rem, calc(96vw / 4));
+// $menu-column-width: min(15rem, calc(96vw / 4));
+$menu-column-width: min(10.3rem);
 $borders-menu: 1px;
 
 * {
@@ -44,7 +45,9 @@ h4,
 button {
   color: var(--color-white);
   text-decoration: none;
-  letter-spacing: 0.06em;
+  // letter-spacing: 0.06em;
+  font-weight: normal;
+  line-height: initial;
 }
 
 p,
@@ -94,7 +97,7 @@ li {
 
   h1,
   p {
-    padding-bottom: 1.5em;
+    padding-bottom: var(--space-lg);
   }
 
   ul {
@@ -143,7 +146,7 @@ li {
 
   @include breakpoint(md) {
     display: grid;
-    grid-template-columns: $menu-column-width auto $menu-column-width $menu-column-width;
+    grid-template-columns: calc((#{$menu-column-width} - var(--space-sm)) * 1.5) auto $menu-column-width $menu-column-width;
     gap: var(--space-sm);
   }
 
@@ -155,28 +158,29 @@ li {
     @include breakpoint(md) {
       grid-column: 2 / 4;
       border-top: $borders-menu solid var(--color-white);
-      padding: var(--space-xxxs) 0;
+      padding: var(--space-xxs) 0;
     }
     @include breakpoint(xl) {
       grid-column: 2 / 3;
     }
   }
   .imprint-text {
-    border-top: $borders-menu solid var(--color-white);
     padding: var(--space-lg) 0;
     @include breakpoint(md) {
       grid-column: 4/5;
-      padding: var(--space-xxxs) 0;
+      padding: 0;
     }
     @include breakpoint(xl) {
       grid-column: 3/5;
     }
 
+    > div {
+      border-top: $borders-menu solid var(--color-white);
+      padding-top: var(--space-xxs);
+    }
+
     .imprint-contact {
-      display: block;
-      @include breakpoint(md) {
-        display: none;
-      }
+      text-transform: uppercase;
     }
   }
 }

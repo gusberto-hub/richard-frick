@@ -338,32 +338,48 @@ navButtonMobile.onclick = () => {
 // Accordions
 function accordionsControl() {
   for (let menuItemLv1 of menuItemsLv1) {
-    const listItem = menuItemLv1.parentNode;
-    if (listItem.childNodes.length > 2) {
-      let heightMenuOpen = 0;
-      setTimeout(() => {
-        heightMenuOpen = listItem.scrollHeight;
-        listItem.style.setProperty(
-          "--accordion-height",
-          listItem.scrollHeight + "px"
-        );
-      }, 100);
-
-      menuItemLv1.onclick = (el) => {
-        const clickedEl = el.target.parentNode;
-        clickedEl.classList.toggle("open-menu");
-        for (let sibling of clickedEl.parentNode.children) {
-          if (sibling !== clickedEl) sibling.classList.remove("open-menu");
-        }
-      };
-    }
+    menuItemLv1.onclick = (el) => {
+      const clickedEl = el.target.parentNode;
+      clickedEl.classList.toggle("open-menu");
+      for (let sibling of clickedEl.parentNode.children) {
+        if (sibling !== clickedEl) sibling.classList.remove("open-menu");
+      }
+    };
   }
+
+  // for (let itemLv2 of menuItemsLv2) {
+  //   console.log(itemLv2.parentNode.scrollHeight);
+  //   // itemLv2.parentNode.parentNode.parentNode.style.setProperty(
+  //   //   "--accordion-height",
+  //   //   itemLv2.parentNode.scrollHeight + "px"
+  //   // );
+
+  //   itemLv2.onclick = (el) => {
+  //     const clickedEl = el.target.parentNode;
+  //     clickedEl.classList.toggle("open-menu");
+
+  //     if (clickedEl.classList.contains("open-menu")) {
+  //       clickedEl.parentNode.parentNode.style.setProperty(
+  //         "--accordion-height",
+  //         itemLv2.parentNode.scrollHeight + 20 + "px"
+  //       );
+  //     } else {
+  //       clickedEl.parentNode.parentNode.style.setProperty(
+  //         "--accordion-height",
+  //         `${2 * 1.6 + 0.1}em`
+  //       );
+  //     }
+
+  //     // for (let sibling of clickedEl.parentNode.children) {
+  //     //   if (sibling !== clickedEl) sibling.classList.remove("open-menu");
+  //     // }
+  //   };
+  // }
 }
 accordionsControl();
 
 window.onresize = () => {
   resetHeight();
-  accordionsControl();
 };
 
 const carousel = document.querySelector(".swiper");
