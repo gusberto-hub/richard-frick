@@ -1,12 +1,8 @@
-title: Default Page
+title: Editorial
 fields:
-  editorial_list:
-    label: Editorial List
-    type: structure
-    fields:
-      title:
-        label: Editorial Name
-        type: text
-      link:
-        label: Link to flipbook
-        type: url
+  # editorial_title:
+  #   label: Editorial Title
+  #   type: text
+  editorial_url:
+    label: Url to external PDF Viewer (ex. flipsnack)
+    type: url

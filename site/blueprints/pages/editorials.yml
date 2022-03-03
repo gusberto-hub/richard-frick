@@ -1,0 +1,13 @@
+title: Editorials
+sections:
+  pages:
+    headline: Seiten veröffentlicht
+    type: pages
+    layout: list
+    status: published
+  pages_1:
+    headline: Seiten im Entwurf
+    type: pages
+    layout: list
+    status: draft
+    template: editorial
