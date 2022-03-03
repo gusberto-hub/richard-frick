@@ -7,7 +7,6 @@
         </div>
         <div class="imprint-text">
             <div class="imprint-contact">
-                <h2>Kontakt</h2>
                 <?= $site->address()->kt() ?>
                 <p>
                     <?= $site->mail() ?> <br>
@@ -16,7 +15,11 @@
                 </p>
             </div>
 
-            <?= $page->imprint()->kirbytext() ?>
+            <div style="margin-top:2em">
+                <?= $page->imprint()->kirbytext() ?>
+            </div>
+
+
         </div>
 
     </div>
