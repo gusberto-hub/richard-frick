@@ -123,7 +123,7 @@ function purgeCSS() {
       .src(cssFolder + "/style.css")
       .pipe(
         purgecss({
-          content: ["main/*.html", scriptsJsPath + "/scripts.js"],
+          content: ["site/**/*.php", scriptsJsPath + "/scripts.js"],
           safelist: {
             standard: [".is-hidden", ".is-visible"],
             deep: [/class$/],

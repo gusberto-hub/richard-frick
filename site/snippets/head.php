@@ -10,11 +10,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <?= Bnomei\Fingerprint::css('main/assets/css/style.css');?>
     <link rel="preconnect" href="<https://app.snipcart.com>" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="preconnect" href="<https://cdn.snipcart.com>" />
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <?= Bnomei\Fingerprint::css('main/assets/css/style.css');?>
 
     <?php if($page->isHomePage()): ?>
     <title>
