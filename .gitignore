@@ -51,3 +51,4 @@ Icon
 node_modules
 node_modules.nosync
 __archive
+*.indd
