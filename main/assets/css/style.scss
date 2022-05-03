@@ -1,23 +1,22 @@
-@use "base" with
-  (
-    $breakpoints: (
-      "xs": 32rem,
-      // ~512px
-      "sm": 48rem,
-      // ~768px
-      "md": 58rem,
-      // ~1024px
-      "lg": 80rem,
-      // ~1280px
-      "xl": 90rem,
-      // ~1440px,
-      "xxl": 110rem,
-      // ~1440px,
-    ),
-    $grid-columns: 12
-  );
+@use "base" with (
+  $breakpoints: (
+    "xs": 32rem,
+    // ~512px
+    "sm": 48rem,
+    // ~768px
+    "md": 70rem,
+    // ~1024px
+    "lg": 80rem,
+    // ~1280px
+    "xl": 90rem,
+    // ~1440px,
+    "xxl": 110rem,
+    // ~1440px,
+  ),
+  $grid-columns: 12
+);
 
 /*! purgecss start ignore */
 @use "custom-style";
-@use "components/**/*.scss";
+// @use "components/**/*.scss" as "*";
 /*! purgecss end ignore */
