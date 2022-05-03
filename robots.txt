@@ -1,0 +1,7 @@
+User-agent: *
+disallow: /kirby/
+disallow: /site/
+allow: /media/
+
+Sitemap: https://www.rifri-typo.ch/sitemap.xml
+
