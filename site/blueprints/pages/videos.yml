@@ -1,0 +1,17 @@
+title: Videos
+sections:
+  fields:
+    fields:
+      test_field:
+        label: Video Collection
+        type: text
+      video_collection:
+        label: Video Collection
+        type: structure
+        fields:
+          title:
+            label: Title
+            type: text
+          url:
+            label: URL
+            type: url

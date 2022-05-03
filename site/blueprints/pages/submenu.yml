@@ -1,16 +1,17 @@
 title: Site
-sections:
-  pages:
-    headline: Seiten
-    type: pages
-    layout: list
-    status: listed
-    # template: photo_project
+columns:
+  left:
+    width: 1/4
+    sections:
+      content:
+        type: fields
+        extends: sections/togglePageStatus
 
-  # drafts:
-  #   label: Entwürfe
-  #   headline: Drafts
-  #   type: pages
-  #   layout: list
-  #   size: medium
-  #   status: drafts
+  right:
+    width: 3/4
+    sections:
+      pages:
+        type: pages
+        headline: Seiten
+        layout: list
+        status: listed

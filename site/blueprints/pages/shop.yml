@@ -1,9 +1,13 @@
-title: Photography
+title: Shop
 columns:
   - width: 1/2
     sections:
+      fields:
+        type: fields
+        extends: sections/togglePageStatus
+
       pages:
-        headline: Seiten
+        headline: Produkte
         type: pages
         layout: list
         size: medium
@@ -16,7 +20,7 @@ columns:
         layout: list
         size: medium
         status: draft
-        template: photo_project
+        template: product
 
       unlisted:
         headline: nicht gelistet
@@ -24,4 +28,3 @@ columns:
         layout: list
         size: medium
         status: unlisted
-        template: photo_project

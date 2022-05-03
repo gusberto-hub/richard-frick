@@ -1,22 +1,2 @@
 title: Photo Project
-columns:
-  - width: 1/2
-    sections:
-      fields:
-        fields:
-          intro_text_heading:
-            type: text
-            label: Titel Einführung
-          intro_text_body:
-            type: textarea
-            label: Inhalt Einführung
-
-  - width: 1/2
-    sections:
-      Files:
-        headline: files
-        type: files
-        layout: cards
-        image:
-          ratio: 3/2
-          cover: false
+extends: sections/slideshow

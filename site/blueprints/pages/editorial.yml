@@ -1,8 +1,23 @@
 title: Editorial
-fields:
-  # editorial_title:
-  #   label: Editorial Title
-  #   type: text
-  editorial_url:
-    label: Url to external PDF Viewer (ex. flipsnack)
-    type: url
+
+sections:
+  fields:
+    fields:
+      hasSlideshow:
+        label: Slideshow
+        type: toggle
+      editorial_url:
+        label: Url to external PDF Viewer (ex. flipsnack)
+        type: url
+        when:
+          hasSlideshow: false
+
+  Files:
+    headline: files
+    type: files
+    when:
+      hasSlideshow: true
+    layout: cards
+    image:
+      ratio: 3/2
+      cover: false

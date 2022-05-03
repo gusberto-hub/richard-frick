@@ -1,0 +1,5 @@
+fields:
+  togglePageStatus:
+    label: Seite online
+    type: toggle
+    default: true

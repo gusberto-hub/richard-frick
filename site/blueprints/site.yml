@@ -12,11 +12,16 @@ tabs:
             status: listed
 
           drafts:
-            label: Entwürfe
             headline: Drafts
             type: pages
             layout: list
-            status: drafts
+            status: draft
+
+          unlisted:
+            headline: Nicht gelistet
+            type: pages
+            layout: list
+            status: unlisted
 
       - width: 1/2
         sections:
