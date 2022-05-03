@@ -1,7 +1,5 @@
 <header>
     <div class="nav-container">
-        <!-- <div class="nav-bg">
-        </div> -->
         <div class="nav-header">
             <a class="logo" href="/"><?= $site->title() ?></a>
             <button>Menu</button>
@@ -9,16 +7,26 @@
         <nav>
             <ul id="menu" class="menu menu-lv1">
                 <?php foreach($pages->listed() as $menu_lv1): ?>
-                <?php if($menu_lv1 == ('Shop') or $menu_lv1 == ('Sammlung')): ?>
+                <?php if($menu_lv1->Togglepagestatus()->exists() && $menu_lv1->Togglepagestatus()->toBool() === false): ?>
                 <li>
-                    <a class="<?php e($menu_lv1->isOpen(), 'nav-current') ?> submenu-handler menu-item-lv1"><?= $menu_lv1->title() ?>
+                    <a href="#" class="<?php e($menu_lv1->isOpen(), 'nav-current') ?> submenu-handler menu-item-lv1">
+                        <?= $menu_lv1->title() ?>
                     </a>
                     <ul class="menu-inactive menu-lv2">
                         <li>
-                            <a class="nav-current">In Bearbeitung</a>
+                            <a href="#" class="nav-current inactive">In Bearbeitung</a>
                         </li>
                     </ul>
                 </li>
+
+                <?php elseif($menu_lv1->Togglepagestatus()->toBool() == true && $menu_lv1 == ('Shop')): ?>
+
+                <li>
+                    <a href="<?= $menu_lv1->url() ?>"
+                        class="<?php e($menu_lv1->isOpen(), 'nav-current') ?>  menu-item-lv1"><?= $menu_lv1->title() ?>
+                    </a>
+                </li>
+
 
                 <?php else: ?>
                 <li class="<?php e($menu_lv1->isOpen(), 'nav-current open-menu') ?>">
@@ -31,28 +39,37 @@
                     ?>
                     <ul class="menu-lv2 <?php e($children_count > 4, 'menu-col-2') ?>">
                         <?php foreach($menu_lv1->children()->listed() as $menu_lv2): ?>
-                        <li class="<?php e($menu_lv2->isOpen(), 'nav-current open-menu') ?>">
+                        <?php if($menu_lv2->hasChildren()): ?>
+                        <li class="<?php e($menu_lv2->isOpen(), 'open-menu') ?>">
 
-                            <?php if($menu_lv2->hasChildren()): ?>
-                            <a class="<?php e($menu_lv2->isOpen(), 'nav-current') ?> submenu-handler menu-item-lv2">
-                                <?= $menu_lv2->title() ?></a>
+                            <a href="#"
+                                class="<?php e($menu_lv2->isOpen(), 'nav-current') ?> submenu-handler menu-item-lv2">
+                                <?= $menu_lv2->title() ?>
+                            </a>
 
                             <ul class="menu-lv3">
                                 <?php foreach($menu_lv2->children()->listed() as $editorial): ?>
                                 <li>
                                     <a href="<?= $editorial->url()?>"
-                                        class="<?php e($editorial->isOpen(), 'nav-current')  ?> ">
+                                        class="<?php e($editorial->isOpen(), 'nav-current open-menu')  ?> ">
                                         <?= $editorial->title() ?>
                                     </a>
                                 </li>
                                 <?php endforeach ?>
                             </ul>
 
-                            <?php else: ?>
-                            <a href="<?= $menu_lv2->url()?>" class="<?php e($menu_lv2->isOpen(), 'nav-current') ?>">
-                                <?= $menu_lv2->title() ?></a>
-                            <?php endif ?>
                         </li>
+                        <?php else: ?>
+                        <li class="">
+                            <a href="<?= $menu_lv2->url()?>">
+                                <?php if ($menu_lv2->isOpen()): ?>
+                                <h1 class='nav-current'><?= $menu_lv2->title() ?></h1>
+                                <?php else: ?>
+                                <?= $menu_lv2->title() ?>
+                                <?php endif ?>
+                            </a>
+                        </li>
+                        <?php endif ?>
                         <?php endforeach ?>
                     </ul>
                     <?php endif ?>
@@ -62,16 +79,7 @@
             </ul>
         </nav>
     </div>
-    <!-- <div class="contact">
-        <div class="contact-address">
-            <?= $site->address()->kt() ?>
-        </div>
-        <div class="contact-social">
-            <a href="mailto:<?= $site->mail()?>"><?= $site->mail()?></a>
-            <a href="tel:<?= $site->tel()?>"><?= $site->tel()?></a>
-            <a href="tel:<?= $site->tel_mobile()?>"><?= $site->tel_mobile()?></a>
-        </div>
-    </div> -->
+
     <?php if(page('Shop')->isOpen()): ?>
     <div class="cart-button">
         <button class="snipcart-checkout cart-btn">Warenkorb (<span class="snipcart-items-count">0</span>)
