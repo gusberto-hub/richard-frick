@@ -2,20 +2,12 @@
 <?php snippet('navigation') ?>
 
 <main class="content-container" id="<?= $page->template() ?>">
+
+    <?php if($page->hasSlideshow()->toBool() === false): ?>
+
     <div class="swiper">
         <div class="swiper-wrapper">
-            <!-- <?php
-$books = $page->editorial_list()->toStructure();
-foreach ($books as $book): ?>
-            <div class="swiper-slide" swipeTitle="<?= $book->title() ?>">
-                <iframe src="<?= $book->link() ?>" width="100%" height="480" seamless="seamless" scrolling="no"
-                    frameBorder="0" allowFullScreen></iframe>
-            </div>
-            <?php endforeach ?> -->
-
-
             <div class="swiper-slide" swipeTitle="<?= $page->title() ?>">
-
                 <iframe src="<?= $page->Editorial_url() ?>" width="100%" height="480" seamless="seamless" scrolling="no"
                     frameBorder="0" allowFullScreen></iframe>
             </div>
@@ -43,12 +35,6 @@ foreach ($books as $book): ?>
         </div>
     </div>
 
-    <!-- <div class="swiper-footer">
-        <div></div>
-        <div class="swipe-info">
-            <div class="swiper-name">Introduction</div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </div> -->
+    <?php else: snippet('slideshow'); endif ?>
 </main>
 <?php snippet('footer') ?>
