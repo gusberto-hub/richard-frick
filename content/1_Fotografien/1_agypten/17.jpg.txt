@@ -1,5 +1,13 @@
-Caption: 
+Caption: 1994, Ägypten hat die älteste Eisenbahnstrecke des Kontinents.
 
 ----
 
 Panorama: false
+
+----
+
+Alt: 
+
+----
+
+Photographer: 

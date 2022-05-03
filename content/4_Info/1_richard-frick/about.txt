@@ -4,7 +4,7 @@ Title: Richard Frick
 
 Info-text:
 
-## Richard Frick
+# Richard Frick
 Richard Bruno Frick (*19. Mai 1955 in Niederuzwil SG; heimatberechtigt in Oberbüren SG) ist Buch- und Plakatsammler, Dozent für Typografie, Grafiker  und Fachbuchautor.
 
 ## Werk

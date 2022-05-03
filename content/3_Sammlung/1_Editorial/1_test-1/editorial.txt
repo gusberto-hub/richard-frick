@@ -1,0 +1,9 @@
+Title: test 1
+
+----
+
+Hasslideshow: false
+
+----
+
+Editorial-url: https://cdn.flipsnack.com/widget/v2/widget.html?hash=tm0daqfcjl

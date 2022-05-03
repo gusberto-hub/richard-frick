@@ -1,0 +1,20 @@
+Title: Videos
+
+----
+
+Test-field: 
+
+----
+
+Video-collection:
+
+- 
+  title: Egypt
+  url: https://vimeo.com/11507863
+  street: egypt
+  zip: ""
+- 
+  title: Egypt 2
+  url: https://vimeo.com/11507863
+  street: egypt
+  zip: ""

@@ -1,8 +1,16 @@
-Caption: 
+Caption: 1994, feilschen ist ein wichtiger Aspekt in den Märkten.
 
 ----
 
 Panorama: false
+
+----
+
+Alt: 
+
+----
+
+Photographer: 
 
 ----
 
