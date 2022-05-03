@@ -323,6 +323,7 @@ const navButtonMobile = document.querySelector(".nav-header button");
 const menuItemsLv1 = document.querySelectorAll(".submenu-handler");
 const root = document.documentElement;
 let touchDevice = false;
+const body = document.querySelector("body");
 
 function resetHeight() {
   const viewportHeight = window.innerHeight + "px";
@@ -330,6 +331,8 @@ function resetHeight() {
   root.style.setProperty("--viewport-height", viewportHeight);
 }
 resetHeight();
+
+setTimeout(() => (body.className = ""), 500);
 
 navButtonMobile.onclick = () => {
   header.classList.toggle("nav-open");
@@ -341,8 +344,12 @@ function accordionsControl() {
     menuItemLv1.onclick = (el) => {
       const clickedEl = el.target.parentNode;
       clickedEl.classList.toggle("open-menu");
+      clickedEl.style.animationDuration = "2s !important";
       for (let sibling of clickedEl.parentNode.children) {
-        if (sibling !== clickedEl) sibling.classList.remove("open-menu");
+        if (sibling !== clickedEl) {
+          sibling.classList.remove("open-menu");
+          sibling.childNodes[1].classList.remove("nav-current");
+        }
       }
     };
   }
@@ -380,6 +387,8 @@ accordionsControl();
 
 window.onresize = () => {
   resetHeight();
+  body.className = "preload";
+  setTimeout(() => (body.className = ""), 1000);
 };
 
 const carousel = document.querySelector(".swiper");
@@ -397,16 +406,20 @@ if (carousel && carousel.querySelectorAll(".swiper-slide").length > 1) {
       nextEl: ".swipe-next",
       prevEl: ".swipe-prev",
     },
+    keyboard: true,
   });
 
   const swiperPagination = document.querySelector(".swiper-pagination-current");
-  swiperPagination ? (swiperPagination.nextSibling.textContent = " | ") : "";
+  swiperPagination && (swiperPagination.nextSibling.textContent = " | ");
+
+  let activeSlide = document.querySelector(".swiper-slide-active");
+  let swipeTitle = document.querySelector(".swiper-name");
+  swipeTitle && (swipeTitle.innerText = activeSlide.getAttribute("swipetitle"));
 
   swiper.on("slideChangeTransitionStart", () => {
-    const activeSlide = document.querySelector(".swiper-slide-active");
-    const swipeTitle = document.querySelector(".swiper-name");
-    swipeTitle
-      ? (swipeTitle.innerText = activeSlide.getAttribute("swipetitle"))
-      : "";
+    activeSlide = document.querySelector(".swiper-slide-active");
+    swipeTitle = document.querySelector(".swiper-name");
+    swipeTitle &&
+      (swipeTitle.innerText = activeSlide.getAttribute("swipetitle"));
   });
 }
